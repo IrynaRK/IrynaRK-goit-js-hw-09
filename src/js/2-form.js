@@ -30,6 +30,3 @@ form.addEventListener('submit', event => {
   formData.email = '';
   formData.message = '';
 });
-export default defineConfig({
-  base: '/vanilla-app-template/',
-});

@@ -109,6 +109,3 @@ document.addEventListener('DOMContentLoaded', () => {
     disableScroll: true,
   });
 });
-export default defineConfig({
-  base: '/vanilla-app-template/',
-});
