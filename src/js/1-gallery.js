@@ -97,16 +97,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const myGallery = new Gallery(galleryContainer, images);
   myGallery.renderGallery();
 
-  new SimpleLightbox('.gallery a', {
-    captions: true,
-    captionSelector: 'img',
-    captionType: 'attr',
-    captionsData: 'alt',
-    captionPosition: 'bottom',
-    captionDelay: 250,
-    close: true,
-    loop: true,
-    animationSpeed: 250,
-    disableScroll: true,
-  });
+  setTimeout(() => {
+    new SimpleLightbox('.gallery a', {
+      captions: true,
+      captionSelector: 'img',
+      captionType: 'attr',
+      captionsData: 'alt',
+      captionPosition: 'bottom',
+      captionDelay: 250,
+      close: true,
+      loop: true,
+      animationSpeed: 250,
+      disableScroll: true,
+    });
+  }, 250);
 });
