@@ -1,4 +1,4 @@
-import"./assets/modulepreload-polyfill-B5Qt9EMX.js";/* empty css                      */import{S as e}from"./assets/vendor-B-WyX8ve.js";const n=document.querySelector(".gallery");class r{constructor(o,t){this.galleryContainer=o,this.galleryItems=t}renderGallery(){const o=this.galleryItems.map(({preview:t,original:a,description:p})=>`
+import"./assets/modulepreload-polyfill-B5Qt9EMX.js";/* empty css                      */import{S as e}from"./assets/vendor-g6-w1428.js";const n=document.querySelector(".gallery");class r{constructor(o,t){this.galleryContainer=o,this.galleryItems=t}renderGallery(){const o=this.galleryItems.map(({preview:t,original:a,description:p})=>`
     
     <li class="gallery-item"> 
     <a class="gallery-link" href="${a}"> 
