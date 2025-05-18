@@ -3,19 +3,28 @@ const formData = {
   message: '',
 };
 const form = document.querySelector('.feedback-form');
+const emailInput = document.querySelector('[name="email"]');
+const messageInput = document.querySelector('[name="message"]');
+
 document.addEventListener('DOMContentLoaded', () => {
   const savedData = localStorage.getItem('feedback-form-state');
   if (savedData) {
-    const parsedData = JSON.parse(savedData);
-    emailInput.value = parsedData.email;
-    messageInput.value = parsedData.message;
-    formData.email = parsedData.email;
-    formData.message = parsedData.message;
+    try {
+      const parsedData = JSON.parse(savedData);
+      emailInput.value = parsedData.email || '';
+      messageInput.value = parsedData.message || '';
+      formData.email = parsedData.email || '';
+      formData.message = parsedData.message || '';
+    } catch (error) {
+      console.error('Parsing error localStorage:', error);
+    }
   }
 });
 form.addEventListener('input', event => {
-  formData[event.target.name] = event.target.value;
-  localStorage.setItem('feedback-form-state', JSON.stringify(formData));
+  if (event.target.name) {
+    formData[event.target.name] = event.target.value;
+    localStorage.setItem('feedback-form-state', JSON.stringify(formData));
+  }
 });
 
 form.addEventListener('submit', event => {
